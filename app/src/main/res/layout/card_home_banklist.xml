@@ -14,8 +14,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:cardCornerRadius="10dp"
         android:elevation="10dp"
-        android:layout_marginBottom="10dp"
         >
+
 
 
         <LinearLayout
@@ -34,12 +34,13 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/Card_BankList_Item_Status"
+                android:id="@+id/Card_BankList_Item_Status_Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:text="Active"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

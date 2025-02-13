@@ -74,6 +74,7 @@ public class onboarding extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_onboarding, container, false);
 
         Button button = view.findViewById(R.id.Button_Begin);
@@ -81,12 +82,14 @@ public class onboarding extends Fragment {
         Banks_List = view.findViewById(R.id.Onboarding_Cards_List);
 
         Banks = new ArrayList<>();
-        Banks.add(new cashmap_onboarding_data("Elmer's Bank", R.drawable.pattern_1, R.drawable.logo));
-        Banks.add(new cashmap_onboarding_data("Banko Ni Oro", R.drawable.pattern_1, R.drawable.logo));
-        Banks.add(new cashmap_onboarding_data("Banking Ina", R.drawable.pattern_1, R.drawable.logo));
-        Banks.add(new cashmap_onboarding_data("Elmer's Bank", R.drawable.pattern_1, R.drawable.logo));
+        Banks.add(new cashmap_onboarding_data("Elmer's Bank", R.drawable.pattern_1, R.drawable.logo, "2315 5834 1243"));
+        Banks.add(new cashmap_onboarding_data("JC's Finance Group", R.drawable.pattern_1, R.drawable.logo, "8823 4823 5923"));
+        Banks.add(new cashmap_onboarding_data("Reniel's Vault", R.drawable.pattern_1, R.drawable.logo, "1295 9455 9230"));
+        Banks.add(new cashmap_onboarding_data("Banking to the Heart", R.drawable.pattern_1, R.drawable.logo, "3942 0344 1203"));
+        Banks.add(new cashmap_onboarding_data("Marc JuDeposit", R.drawable.pattern_1, R.drawable.logo, "2391 0234 2343"));
+        Banks.add(new cashmap_onboarding_data("BANKok ni Juliane", R.drawable.pattern_1, R.drawable.logo, "2939 4923 5493"));
 
-        Adapter = new cashmap_onboarding_adapter(getContext(), Banks);
+        Adapter = new cashmap_onboarding_adapter(getContext(), Banks, view);
         Banks_List.setAdapter(Adapter);
 
         // Inflate the layout for this fragment

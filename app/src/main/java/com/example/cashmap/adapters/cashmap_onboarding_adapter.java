@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.navigation.Navigation;
 
 import com.example.cashmap.data.cashmap_onboarding_data;
 import com.example.cashmap.*;
@@ -21,10 +22,12 @@ import java.util.List;
 public class cashmap_onboarding_adapter extends BaseAdapter {
     private Context context;
     private List<cashmap_onboarding_data> Bank_List;
+    private View view;
 
-    public cashmap_onboarding_adapter(Context context, List<cashmap_onboarding_data> Bank_List){
+    public cashmap_onboarding_adapter(Context context, List<cashmap_onboarding_data> Bank_List, View view){
         this.context = context;
         this.Bank_List = Bank_List;
+        this.view = view;
     }
 
     @Override
@@ -46,7 +49,9 @@ public class cashmap_onboarding_adapter extends BaseAdapter {
         TextView Bank_Name;
         ImageView Bank_Background;
         ImageView Bank_Logo;
+        TextView Bank_Decoration;
     }
+
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -57,6 +62,7 @@ public class cashmap_onboarding_adapter extends BaseAdapter {
             Card.Bank_Name = convertView.findViewById(R.id.Bank_Name);
             Card.Bank_Background = convertView.findViewById(R.id.Bank_Background);
             Card.Bank_Logo = convertView.findViewById(R.id.Bank_Logo);
+            Card.Bank_Decoration = convertView.findViewById(R.id.Bank_Decoration);
             convertView.setTag(Card);
         } else {
             Card = (ViewHolder) convertView.getTag();
@@ -66,7 +72,14 @@ public class cashmap_onboarding_adapter extends BaseAdapter {
         Card.Bank_Name.setText(Info.getBank_Name());
         Card.Bank_Background.setImageResource(Info.getBank_Background());
         Card.Bank_Logo.setImageResource(Info.getBank_Logo());
+        Card.Bank_Decoration.setText(Info.getBank_Decoration());
 
+        convertView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(view).navigate(R.id.action_onboarding_to_home2);
+            }
+        });
         return convertView;
     }
 }

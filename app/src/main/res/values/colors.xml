@@ -2,6 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="cashmap_main">#53DDFC</color>
+    <!--<color name="cashmap_main">#53DDFC</color>-->
+    <color name="cashmap_main">#85A947</color>
     <color name="cashmap_night_againstLight">#1c1c1c</color>
+    <color name="cashmap_active">#2AF04B</color>
+    <color name="cashmap_inactive">#F44336</color>
 </resources>

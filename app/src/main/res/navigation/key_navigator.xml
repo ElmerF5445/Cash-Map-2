@@ -29,6 +29,7 @@
         <action
             android:id="@+id/action_home2_to_map"
             app:destination="@id/map"
+            app:enterAnim="@android:anim/slide_in_left"
             app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment

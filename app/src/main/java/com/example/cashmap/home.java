@@ -80,6 +80,8 @@ public class home extends Fragment {
         Button Change_Bank = view.findViewById(R.id.Button_ChangeBank);
         Button Open_Map = view.findViewById(R.id.Button_Map);
 
+
+
         // Brought to you by Reniel Baldove
         Change_Bank.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,10 +100,20 @@ public class home extends Fragment {
         ATM_List = view.findViewById(R.id.ATM_List);
 
         ATMs = new ArrayList<>();
-        ATMs.add(new cashmap_home_data("Landbank ATM 1, 45 Bayan-bayanan Avenue", "Active"));
-        ATMs.add(new cashmap_home_data("Landbank ATM 2, 45 Bayan-bayanan Avenue", "Inactive"));
+        ATMs.add(new cashmap_home_data("Elmer's Bank ATM 1, 5 Gen. Luna St.", "Active", 1));
+        ATMs.add(new cashmap_home_data("Elmer's Bank ATM 2, 5 Gen. Luna St.", "Active", 1));
+        ATMs.add(new cashmap_home_data("Elmer's Bank ATM 3, 5 Gen. Luna St.", "Inactive", 0));
+        ATMs.add(new cashmap_home_data("JC's Finance Group ATM 1, 45 Bayan-bayanan Avenue", "Inactive", 0));
+        ATMs.add(new cashmap_home_data("JC's Finance Group ATM 2, 45 Bayan-bayanan Avenue", "Active", 0));
+        ATMs.add(new cashmap_home_data("Reniel's Vault ATM 235, 1 J.P. Rizal Avenue", "Active", 0));
+        ATMs.add(new cashmap_home_data("Banking to the Heart ATM 1, 7 Silangan St.", "Inactive", 0));
+        ATMs.add(new cashmap_home_data("Banking to the Heart ATM 2, 7 Silangan St.", "Active", 0));
+        ATMs.add(new cashmap_home_data("Marc JuDeposit ATM 1, 7 Bayan-Bayanan Avenue", "Active", 0));
+        ATMs.add(new cashmap_home_data("BANKok ni Juliane ATM 1, 88 Diamond St.", "Active", 0));
+        ATMs.add(new cashmap_home_data("BANKok ni Juliane ATM 2, 88 Diamond St.", "Inactive", 0));
 
-        Adapter = new cashmap_home_adapter(getContext(), ATMs);
+
+        Adapter = new cashmap_home_adapter(getContext(), ATMs, view);
         ATM_List.setAdapter(Adapter);
 
 
